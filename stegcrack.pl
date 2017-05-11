@@ -141,6 +141,9 @@ sub main
     #print "Time elapsed: " . $elapsed->in_units("minutes") . "m\n";
     print "[+] Stego crack has been finished.\n";
     clean_temp;
+    foreach ( @children_pids ) {
+        kill('KILL', $_);
+    }
     return 0;
 }
 
