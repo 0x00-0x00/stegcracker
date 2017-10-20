@@ -86,7 +86,7 @@ sub crack_func
 {
     my $file = $_[0];
     my $try = $_[1];
-    my $return = system "steghide extract -sf " . $file . " -p " . $try . " > /dev/null 2>&1";
+    my $return = system "steghide extract -sf '" . $file . "' -p '" . $try . "' > /dev/null 2>&1";
     return $return;
 }
 
